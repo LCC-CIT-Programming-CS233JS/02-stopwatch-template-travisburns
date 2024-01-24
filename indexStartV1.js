@@ -18,21 +18,40 @@
         digits by adding a leading zero
 */
 /*
+
+
     Create 3 global variables, isRunning, timer and elapsedTime.
     Initialize them to false, null and 0 respectively.
 */
+let isRunning = false;
+let timer = null;
+let elapsedTime = 0;
+
+
 
 function init()
 {
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    const reset = document.getElementById("reset");
+
     // Put the element on the page with an id of start in a variable
     // Do the same for the stop button and the reset button
-
+    start.onclick = () => startTimer();
+    stop.onclick = () => stopTimer();
+    reset.onclick = () => resetTimer();
     // Add an onclick handler to each of the buttons
     // The functions startTimer, stopTimer and resetTimer should fire when one of the buttons is clicked
 }
 
 
 function startTimer() {
+    console.log("start Timer Works");
+    if(timer != isRunning) {
+        isRunning = true;
+        setTimer = () => incrementTimer(1)
+        timer = timer; 
+    }
     // if the timer is NOT running, start it by
         // set the isRunning variable to true
         // call the function setTimer to call the function incrementTimer every second
@@ -41,6 +60,15 @@ function startTimer() {
 }
 
 function incrementTimer() {
+    elapsedTime++
+    minutes = timer /60;
+    // seconds = %minutes
+    
+    // pad={minutes}
+    // pad={seconds}
+
+
+
     // increment the elapsedTime
     // calculate the number of minutes and seconds by
     // minutes = the integer portion of (timerTime / 60)
@@ -58,6 +86,7 @@ function pad(number) {
 }
 
 function stopTimer() {
+    console.log("stop Timer Works");
     // if the timer is running, stop it by
         // set isRunning to false
         // call the function clearInterval to stop the timer
@@ -65,9 +94,12 @@ function stopTimer() {
 }
 
 function resetTimer() {
+    console.log("Reset Timer Works");
     // stop the timer by calling stopTimer
     // set the timerTime back to 0
     // write 00 to the elements on the page for minutes and seconds
 }
 
+
+init();
 // When the page has finished loading, call the function init
