@@ -1,5 +1,5 @@
 # JavaScript Stopwatch
-
+C:\Users\15412\Desktop\02-stopwatch-template-travisburns\StopWatchUI.png
 A simple, interactive stopwatch application built with HTML, CSS, and JavaScript.
 
 ## Project Overview
